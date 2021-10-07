@@ -1,0 +1,138 @@
+:root {
+    --bgcolor-header-linear-from: rgba(45, 82, 145, 0.5);
+    --bgcolor-header-linear-to: rgba(45, 82, 145, 0.75);
+    --bgcolor-button-linear-from: #fc8898;
+    --bgcolor-button-linear-to: #ffb961;
+    --bgcolor-button-facebook: #3b599a;
+    --bgcolor-button-google: #de4b38;
+    --bgcolor-social-button-hover: #fff;
+    --bgcolor-footer: #ecf4fa;
+  
+    --color-header-title: #ffff00;
+    --color-header-subtitle: #fff;
+    --color-shadow: #bdbdbd;
+    --color-border-bottom: #ff942f;
+    --color-default-tab-forms: #d5dbe2;
+    --color-link-forms: #2f3169;
+    --color-font-input: #3d4046;
+    --color-border-input: #dee0e4;
+    --color-border-button-facebook: #627db4;
+    --color-border-button-google: #eb6f5f;
+    --color-font-default-button: #fff;
+  
+    --color-gray-700: #afb7be;
+    --color-gray-900: #5c6169;
+    --color-white: #fff;
+  }
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* O box-sizing com o valor border-box faz com que o navegador não calcule a
+     dimensão de um elemento somando bordas e margens com altura e largura.
+     Com content-box , ao definir width: 100px , o interior (conteúdo) do 
+     elemento terá 100px, mas por termos padding-left: 50px , o tamanho total do elemento será 150px. */
+}
+
+/* html, body {
+    height: 100%;
+} */
+
+body {
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing: antialiased; /* nao entendi - https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth */ 
+    font-size: 16px;
+}
+
+#app {
+    height: 100vh;
+    /* unidade vh(viewport) - é o tamanho realmente da minha tela, do meu viewport. */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#app .header {
+    height: 40%;
+    padding: 3.5rem 0 0 1rem; /* rem ajuda na responsividade */
+    background-image: linear-gradient(to bottom, var(--bgcolor-header-linear-from), var(--bgcolor-header-linear-to)),
+    url('image.jpg');
+    background-size: cover; /* A propriedade background-size do CSS especifica o tamanho das imagens de fundo. */
+    /* Uma palavra-chave que é o inverso de contain. Ajusta a imagem o mais 
+    largamente possível e mantém sua proporção (a imagem não fica esticada). 
+    A imagem "cobre" o container inteiro, tanto em altura como em largura. 
+    Quando a imagem e o container têm diferentes dimensões,a imagem ultrapassa 
+    os limites do container em qualquer direção, para continuar mantendo a proporção. 
+    https://developer.mozilla.org/pt-BR/docs/Web/CSS/background-size */
+    background-position: center center; /* para mostrar o centro da imagem tanto horizontal quanto na vertical */
+}
+
+#app .header h1 {
+    color: var(--color-header-title);
+    font-weight: 200;
+}
+
+#app .footer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 4rem 0 1rem;
+    background-color: var(--bgcolor-footer);
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#app .footer p {
+    color: var(--color-gray-900);
+    font-size: 0.825rem;
+}
+
+#app .footer .social-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+#app .footer .social-buttons button {
+    color: var(--color-font-default-button);
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    height: 40px;
+    margin: 0 0.5rem;
+    width: 130px;
+}
+
+#app .footer .social-buttons button i {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+
+#app .footer .social-buttons button.facebook {
+    border: 2px solid var(--color-border-button-facebook);
+    background-color: var(--bgcolor-button-facebook);
+}
+
+#app .footer .social-buttons button.facebook:hover {
+    border: 2px solid var(--bgcolor-button-facebook);
+    color: var(--bgcolor-button-facebook);
+}
+
+#app .footer .social-buttons button.google {
+    border: 2px solid var(--color-border-button-google);
+    background-color: var(--bgcolor-button-google);
+}
+
+#app .footer .social-buttons button.google:hover {
+    border: 2px solid var(--bgcolor-button-google);
+    color: var(--bgcolor-button-google);
+}
+
+#app .footer .social-buttons button:hover {
+    transition: all 0.25s ease-out;
+    background-color: var(--bgcolor-social-button-hover);
+}
+
+
+
